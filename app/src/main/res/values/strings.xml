@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Google Full Layout</string>
+    <string name="cloudy_72">Cloudy 72º</string>
+    <string name="light_traffic_ahead">Light traffic ahead.</string>
+    <string name="good_morning">Good morning!</string>
+    <string name="assistant">Assistant</string>
 </resources>
