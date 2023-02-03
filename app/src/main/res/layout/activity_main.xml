@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/LinearLayoutTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -28,6 +28,7 @@
             app:srcCompat="@mipmap/assistantlogo" />
 
         <LinearLayout
+            android:id="@+id/LinearLayoutWeather"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="190dp"
@@ -38,7 +39,8 @@
                 android:id="@+id/imageView3"
                 android:layout_width="20dp"
                 android:layout_height="19dp"
-                android:layout_marginStart="75dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0"
                 android:contentDescription="Cloudy"
                 app:srcCompat="@mipmap/cloudy"
@@ -48,9 +50,11 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:text="@string/cloudy_72"
-                android:textAlignment="viewEnd" />
+                android:textAlignment="viewEnd"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -66,6 +70,7 @@
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -80,8 +85,9 @@
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutTop" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -95,7 +101,9 @@
         android:layout_width="120sp"
         android:layout_height="120sp"
         android:layout_marginTop="12dp"
-        android:background="@android:color/white"
+        android:background="@drawable/round_outline_buttons"
+        android:contentDescription="@string/foto_de_ti"
+        android:elevation="25dp"
         android:src="@mipmap/telf"
         app:layout_constraintEnd_toStartOf="@+id/imageButton7"
         app:layout_constraintHorizontal_bias="0.5"
@@ -107,8 +115,11 @@
         android:id="@+id/imageButton5"
         android:layout_width="120sp"
         android:layout_height="120sp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
-        android:background="@color/white"
+        android:background="@drawable/round_outline_buttons"
+        android:contentDescription="@string/navfoto"
+        android:elevation="25dp"
         app:layout_constraintEnd_toStartOf="@+id/imageButton6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +132,10 @@
         android:layout_width="120sp"
         android:layout_height="120sp"
         android:layout_marginTop="12dp"
-        android:background="@android:color/transparent"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_outline_buttons"
+        android:contentDescription="@string/playfoto"
+        android:elevation="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageButton6"
@@ -133,7 +147,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Navigate"
+        android:elevation="25dp"
+        android:text="@string/navigate"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
         app:layout_constraintEnd_toEndOf="@+id/imageButton5"
@@ -145,7 +160,8 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make a call"
+        android:elevation="25dp"
+        android:text="@string/make_a_call"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
         app:layout_constraintEnd_toEndOf="@+id/imageButton6"
@@ -164,7 +180,8 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play"
+        android:elevation="25dp"
+        android:text="@string/play"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
         app:layout_constraintEnd_toEndOf="@+id/imageButton7"
@@ -173,10 +190,12 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <LinearLayout
+        android:id="@+id/LinearLayoutForYou"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="29dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -186,16 +205,273 @@
             android:id="@+id/imageView6"
             android:layout_width="20dp"
             android:layout_height="40dp"
-            android:layout_weight="0.1"
+            android:layout_weight="0.05"
+            android:background="@drawable/round_outline"
+            android:contentDescription="@string/telffoto"
             app:srcCompat="@mipmap/manolo" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:paddingStart="5dp"
-            android:text="Just for you" />
+            android:text="@string/just_for_you"
+            android:textColor="@color/black"
+            tools:ignore="RtlSymmetry" />
+
     </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardView1"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutForYou">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="25dp"
+                android:contentDescription="@string/navarrow"
+                app:srcCompat="@mipmap/navarrow" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@string/_12_min"
+                        android:textColor="#146E04"
+                        tools:ignore="TextContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/to_tacolicious"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:paddingStart="5dp"
+                    android:text="@string/via_us_101_south"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardView2"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CardView1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_weight="0.162"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@mipmap/juan" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/thomas_williams"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="25dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="25dp"
+                        android:contentDescription="@string/fotomissed"
+                        app:srcCompat="@mipmap/missedcall" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="@string/missed_call"
+                        tools:ignore="TextSizeCheck" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CardView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="25dp"
+                android:contentDescription="@string/playbutton"
+                android:elevation="5dp"
+                app:srcCompat="@mipmap/playvideo" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:text="@string/little_manila"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:text="@string/long_distance"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/resume_from_quot_kitchen_club_quot"
+                    android:textColor="@color/black"
+                    android:textSize="8sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.948"
+        tools:ignore="VisualLintBounds,VisualLintBottomNav">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:background="@mipmap/mic"
+            android:contentDescription="@string/micgo"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="16dp"
+            android:background="@mipmap/downarrow"
+            android:contentDescription="DownArrow"
+            tools:ignore="HardcodedText,RtlHardcoded,SpeakableTextPresentCheck" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="737dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
