@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <!-- Top Bar Left Assistant Logo -->
+        <!-- Asistant Logo Google Arriba Izq. -->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="50dp"
@@ -26,7 +26,7 @@
             android:layout_weight="0.20"
             android:contentDescription="@string/assistant"
             app:srcCompat="@mipmap/assistantlogo" />
-        <!-- Top Bar Right Temperature -->
+        <!-- Lin.Layout Temp. -->
         <LinearLayout
             android:id="@+id/LinearLayoutWeather"
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:layout_marginStart="190dp"
             android:layout_weight="0.20"
             android:orientation="horizontal">
-            <!-- Top Bar Right Temperature Icon -->
+            <!-- Icono Temp Arriba derecha -->
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="20dp"
@@ -45,7 +45,7 @@
                 android:contentDescription="Cloudy"
                 app:srcCompat="@mipmap/cloudy"
                 tools:ignore="HardcodedText,NestedWeights" />
-            <!-- Top Bar Right Temperature Text -->
+            <!-- Texto Temp. Arriba Derecha -->
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -59,7 +59,7 @@
         </LinearLayout>
 
     </LinearLayout>
-    <!-- Traffic Text -->
+    <!-- Texto Trafico -->
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
-    <!-- Good morining text -->
+    <!-- Texto "Good morning" -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
